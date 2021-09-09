@@ -3,7 +3,11 @@ import { useState } from "react";
 const Navbar = () => {
     const [name,setName] = useState("Yes?");
     const handleClick = () => {
-        setName("Nooooo"); 
+        if(name == "Yes?"){
+            setName("Nooooo"); 
+        }
+        else
+        setName("Yes?");
     }
     return ( 
         <nav className = "navbar">
@@ -14,7 +18,9 @@ const Navbar = () => {
                 backgroundColor: "#33b1ba",
                 borderRadius: '8px'
             }}>Beem Engage</a>
-            <button onClick={handleClick}>{name}</button>
+            <button style = {{
+                marginLeft: '80px'
+            }} onClick={handleClick}>{name}</button>
         </nav>
      );
 }
